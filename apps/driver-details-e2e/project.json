@@ -1,0 +1,22 @@
+{
+  "name": "apps/driver-details-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/driver-details-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/playwright:playwright",
+      "outputs": ["{workspaceRoot}/dist/.playwright/apps/driver-details-e2e"],
+      "options": {
+        "config": "apps/driver-details-e2e/playwright.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/driver-details-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "implicitDependencies": ["apps/driver-details"]
+}
